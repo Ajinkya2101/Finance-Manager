@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="profit&loss.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <title>Profit and Loss</title>
+  </head>
+  <body>
+
+    <nav>
+      <div class="logo">
+      Finance Manager      
+      </div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+         <li><a href="homepage.html">Home</a></li>
+         <li class="dropdown"><a href="emi.html">EMI</a>
+            <ul class="dropdown-menu">
+               <li><a href="emitest.html">Compare</a></li>
+               <li><a href="emitest2.html">Bank Options</a></li>
+            </ul>
+         </li>
+         <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+         <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+         <li><a href="interest.html">Simple & Compount Interest</a></li>
+         <li><a href="recurring.html">RD</a></li>
+         <li><a href="tax.html">GST</a></li>
+         <li><a href="sip.html">SIP</a></li>
+      </ul>
+   </nav>      
+
+   <style>
+
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+nav li {
+display: inline-block;
+position: relative;
+}
+
+nav a {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: #000;
+}
+
+nav .dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+padding: 0;
+margin: 0;
+}
+
+nav .dropdown:hover .dropdown-menu {
+display: block;
+}
+
+nav .dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+padding: 0;
+margin: 0;
+background-color: #fff;
+border: 1px solid #ccc;
+}
+
+nav .dropdown-menu li {
+display: block;
+}
+
+nav .dropdown-menu li a {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: #333;
+}
+
+nav .dropdown-menu li a:hover {
+background-color: #764AF1;
+}
+
+
+   </style>
+
+    <div class="container">
+      <h2>Stock Profit & Loss Calculator</h2>
+      <label for="initial-price">Initial Price </label>
+      <input
+        id="initial-price"
+        type="number"
+        placeholder="Enter the initial price"
+      />
+      <label for="stocks-quantity">Quantity of stocks </label>
+      <input
+        id="stocks-quantity"
+        type="number"
+        placeholder="Enter the quantity of stocks"
+      />
+      <label for="current-price">Current Price </label>
+      <input
+        id="current-price"
+        type="number"
+        placeholder="Enter the current price"
+      />
+      <button id="show-button">Calculate</button>
+      <p id="output-text"></p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

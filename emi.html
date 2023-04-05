@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="emi.css">
+  <title>EMI</title>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="logo">
+      Finance Manager      
+      </div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+         <li><a href="homepage.html">Home</a></li>
+         <li class="dropdown"><a href="emi.html">EMI</a>
+            <ul class="dropdown-menu">
+               <li><a href="emitest.html">Compare</a></li>
+               <li><a href="emitest2.html">Bank Options</a></li>
+            </ul>
+         </li>
+         <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+         <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+         <li><a href="interest.html">Simple & Compount Interest</a></li>
+         <li><a href="recurring.html">RD</a></li>
+         <li><a href="tax.html">GST</a></li>
+         <li><a href="sip.html">SIP</a></li>
+      </ul>
+   </nav>      
+
+   <style>
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+nav li {
+display: inline-block;
+position: relative;
+}
+
+nav a {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: #000;
+}
+
+nav .dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+padding: 0;
+margin: 0;
+}
+
+nav .dropdown:hover .dropdown-menu {
+display: block;
+}
+
+nav .dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+padding: 0;
+margin: 0;
+background-color: #fff;
+border: 1px solid #ccc;
+}
+
+nav .dropdown-menu li {
+display: block;
+}
+
+nav .dropdown-menu li a {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: #333;
+}
+
+nav .dropdown-menu li a:hover {
+background-color: #764AF1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #764AF1;
+    color: #fff;
+  }
+
+  .content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+input {
+    outline: none;
+    width: 280px;
+    border: 2px solid #764AF1;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+input::placeholder {
+    font-size: 14px;
+    align-items: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    margin: 20px 0px 10px 0;
+    font-size: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+   </style>
+   
+     <!-- Progress Bar -->
+     <div id="progressBg">
+      <div id="progressBar"></div>
+  </div>
+<center>
+  <div class="container">
+    <h2>EMI Calculator</h2> 
+    <form>
+      <div class="form-group">
+        <label for="loanAmount">Loan Amount</label>
+        <div>
+        <input placeholder="Enter Loan Amount" type="number" id="loanAmount" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="interestRate">Interest Rate</label>
+        <div>
+        <input placeholder="ROI" type="number" id="interestRate" class="form-control" required>
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="loanDuration">Loan Duration (in years)</label>
+        <div>
+        <input placeholder="Tenure" type="number" id="loanDuration" class="form-control" required>
+      </div>
+      </div>
+      <button id="show-button" type="button" onclick="calculateEMI()">Calculate EMI</button>
+    </form>
+    <div id="result">
+      <h2 id="EMI"></h2>
+      <table id="schedule"></table>
+    </div>
+  </div>
+  </center>
+
+    <script src="emi.js"></script>
+  </body>
+</html>

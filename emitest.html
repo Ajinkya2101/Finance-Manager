@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<nav>
+		<div class="logo">
+		Finance Manager      
+		</div>
+		<input type="checkbox" id="click">
+		<label for="click" class="menu-btn">
+		<i class="fas fa-bars"></i>
+		</label>
+		<ul>
+		   <li><a href="homepage.html">Home</a></li>
+		   <li class="dropdown"><a href="emi.html">EMI</a>
+			  <ul class="dropdown-menu">
+				 <li><a href="emitest.html">Compare</a></li>
+				 <li><a href="emitest2.html">Bank Options</a></li>
+			  </ul>
+		   </li>
+		   <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+		   <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+		   <li><a href="interest.html">Simple & Compount Interest</a></li>
+		   <li><a href="recurring.html">RD</a></li>
+		   <li><a href="tax.html">GST</a></li>
+		   <li><a href="sip.html">SIP</a></li>
+		</ul>
+	 </nav>      
+
+	 <style>
+  th {
+    background-color: #764AF1;
+    color: #fff;
+  }
+
+  th,td {
+    border: collapse;
+  }
+
+nav ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+nav li {
+ display: inline-block;
+ position: relative;
+}
+
+nav a {
+ display: block;
+ padding: 10px;
+ text-decoration: none;
+ color: #000;
+}
+
+nav .dropdown-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ padding: 0;
+ margin: 0;
+}
+
+nav .dropdown:hover .dropdown-menu {
+ display: block;
+}
+
+nav .dropdown-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ padding: 0;
+ margin: 0;
+ background-color: #fff;
+ border: 1px solid #ccc;
+}
+
+nav .dropdown-menu li {
+ display: block;
+}
+
+nav .dropdown-menu li a {
+ display: block;
+ padding: 10px;
+ text-decoration: none;
+ color: #333;
+}
+
+nav .dropdown-menu li a:hover {
+ background-color: #764AF1;
+}
+
+table {
+	border: 1px solid black ;
+	border-collapse: collapse;
+	width: 1000px;
+	height: 200px;
+}
+
+th,tr,td {
+	border: solid 1px;
+}
+	 </style>
+
+	<title>EMI Calculator</title>
+  <link rel="stylesheet" href="emitest.css" />
+  <script>
+	function calculateEMI() {
+		var loanAmount = document.getElementById("loanAmount").value;
+		var interestRate1 = document.getElementById("interestRate1").value;
+		var interestRate2 = document.getElementById("interestRate2").value;
+		var tenure = document.getElementById("tenure").value;
+
+		// Calculate EMI for interest rate 1
+		var monthlyInterestRate1 = interestRate1 / 1200;
+		var emi1 = loanAmount * monthlyInterestRate1 / (1 - Math.pow(1 + monthlyInterestRate1, -tenure));
+
+		// Calculate EMI for interest rate 2
+		var monthlyInterestRate2 = interestRate2 / 1200;
+		var emi2 = loanAmount * monthlyInterestRate2 / (1 - Math.pow(1 + monthlyInterestRate2, -tenure));
+
+		// Display the result in a table
+		var table = "<table><tr><th>Interest Rate</th><th>EMI</th></tr>";
+		table += "<tr><td>" + interestRate1 + "%</td><td>" + emi1.toFixed(2) + "</td></tr>";
+		table += "<tr><td>" + interestRate2 + "%</td><td>" + emi2.toFixed(2) + "</td></tr>";
+		table += "</table>";
+		document.getElementById("result").innerHTML = table;
+	}
+</script>
+</head>
+<body>
+	<center>
+		<h2>EMI Comparison</h2>
+<form>
+	<label for="loanAmount">Loan Amount:</label>
+	<div>
+	<input type="number" id="loanAmount" name="loanAmount" required><br>
+</div>
+
+	<label for="interestRate1">Interest Rate 1:</label>
+<div>
+	<input type="number" id="interestRate1" name="interestRate1" required><br>
+</div>
+
+	<label for="interestRate2">Interest Rate 2:</label>
+<div>
+	<input type="number" id="interestRate2" name="interestRate2" required><br>
+</div>
+
+	<label for="tenure">Tenure (in months):</label>
+<div>
+	<input type="number" id="tenure" name="tenure" required><br>
+</div>
+
+	<input id="show-button" type="button" value="Calculate EMI" onclick="calculateEMI()">
+</form>
+
+<div id="result"><h3>Result:</h3></div>
+</center>
+</body>
+</html>

@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+}
+
+nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 3px solid #000000;
+}
+
+nav .dropdown-menu li {
+  display: block;
+}
+
+nav .dropdown-menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav .dropdown-menu li a:hover {
+  background-color: #764AF1;
+}
+
+h3 {
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+
+table {
+width: 60%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+th, td {
+padding: 10px;
+text-align: center;
+border-bottom: 1px solid #ddd;
+}
+
+th {
+background-color: #764AF1;
+color: #fff;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #764AF1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FEFBF6;
+    font-family: 'Poppins', sans-serif;
+    color: #764AF1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+h2 {
+    margin-top: 80px;
+}
+
+input {
+    outline: none;
+    width: 280px;
+    border: 2px solid #764AF1;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+input::placeholder {
+    font-size: 14px;
+    align-items: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    margin: 20px 0px 10px 0;
+    font-size: 20px;
+}
+
+#show-button {
+    background-color: #764AF1;
+    color: #FEFBF6;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#output-text {
+    margin-top: 30px;
+    padding: 10px 20px;
+    color: #000;
+    box-shadow: 0px 0px 1px 1px rgb(12, 10, 10);
+    display: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.footer-list li {
+    margin-right: 20px;
+}
+
+.footer-list i {
+    font-size: 25px;
+    color: #764AF1;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="tax.css" />
+    <title>GST Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<body>
+
+  <nav>
+    <div class="logo">
+    Finance Manager      
+    </div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+    <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+       <li><a href="homepage.html">Home</a></li>
+       <li class="dropdown"><a href="emi.html">EMI</a>
+          <ul class="dropdown-menu">
+             <li><a href="emitest.html">Compare</a></li>
+             <li><a href="emitest2.html">Bank Options</a></li>
+          </ul>
+       </li>
+       <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+       <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+       <li><a href="interest.html">Simple & Compount Interest</a></li>
+       <li><a href="recurring.html">RD</a></li>
+       <li><a href="tax.html">GST</a></li>
+       <li><a href="sip.html">SIP</a></li>
+    </ul>
+ </nav> 
+
+</body>
+  </head>
+  <body>
+    <center>
+    <div class="form">
+      <h2>Enter details:</h2>
+      <label for="amount">Amount:</label>
+    <div>
+      <input type="number" id="amount" name="amount" required>
+    </div>
+      <label for="gstPercent">GST Rate (%):</label>
+    <div>
+      <input type="number" id="gstPercent" name="gstPercent" required>
+    </div>
+      <button id="show-button" onclick="calculateGST()">Calculate</button>
+    </div>
+
+    <h2>Results:</h2>
+    <div class="result">
+      <canvas id="myChart"></canvas>
+      
+    </div>
+    <script src="gstCalculator.js"></script>
+  </center>
+  </body>
+</html>

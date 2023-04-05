@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="fd.css" />
+    <title>Recurring Deposit Calculator</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+      Finance Manager      
+      </div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+         <li><a href="homepage.html">Home</a></li>
+         <li class="dropdown"><a href="emi.html">EMI</a>
+            <ul class="dropdown-menu">
+               <li><a href="emitest.html">Compare</a></li>
+               <li><a href="emitest2.html">Bank Options</a></li>
+            </ul>
+         </li>
+         <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+         <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+         <li><a href="interest.html">Simple & Compount Interest</a></li>
+         <li><a href="recurring.html">RD</a></li>
+         <li><a href="tax.html">GST</a></li>
+         <li><a href="sip.html">SIP</a></li>
+      </ul>
+   </nav> 
+
+    <center>
+    <h2>Recurring Deposit Calculator</h2>
+    <form>
+      <label for="principal">Principal Amount:</label>
+      <div>
+      <input type="number" id="principal" name="principal" required><br><br>
+    </div>
+      <label for="interest">Interest Rate (%):</label>
+    <div>
+      <input type="number" id="interest" name="interest" required><br><br>
+    </div>
+      <label for="tenure">Tenure (months):</label>
+    <div>
+      <input type="number" id="tenure" name="tenure" required><br><br>
+    </div>
+      <label for="monthlyDeposit">Monthly Deposit:</label>
+  <div>
+      <input type="number" id="monthlyDeposit" name="monthlyDeposit" required><br><br>
+      <input id="show-button" type="button" value="Calculate" onclick="calculateRD()">
+    </div>
+    </form>
+    <br>
+    <h2>Results:</h2>
+    <p id="result"></p>
+    <script src="rdCalculator.js"></script>
+  </center>
+  </body>
+</html>

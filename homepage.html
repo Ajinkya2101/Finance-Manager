@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Financial Calculator</title>
+      <link rel="stylesheet" href="homepage.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+
+  <nav>
+    <div class="logo">
+    Finance Manager      
+    </div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+    <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+       <li><a href="about.html">Info</a></li>
+       <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+ </nav>     
+
+ <center>
+  <div class="heading">
+ <h2>Key Features:</h2>
+</div>
+
+        <div class="info-card">
+          <h2>EMI</h2>
+          <p>Calculate your monthly installments and plane ahead using the provided schedule.</p>
+          <button id="show-button" onclick="window.location.href='emi.html'">Calculate</button>
+        </div>
+    
+        <div class="info-card">
+        <h2>Compare EMI</h2>
+        <p>Compare between 2 EMI options upon different ROI's.</p>
+        <button id="show-button" onclick="window.location.href='emitest.html'">Calculate</button>
+      </div>
+    
+      <div class="info-card">
+        <h2>EMI</h2>
+        <p>Add ons- Inbuilt EMI interest rates, varying from Bank to Bank.</p>
+        <button id="show-button" onclick="window.location.href='emitest2.html'">Calculate</button>
+      </div>
+    
+        <div class="info-card">
+          <h2>Profit & Loss</h2>
+          <p>Calculate profit or loss amount and percentage on your investments.</p>
+          <button id="show-button" onclick="window.location.href='profit_loss.html.html'">Calculate</button>
+        </div>
+        
+        <div class="info-card">
+            <h2>Fixed Deposit(FD)</h2>
+            <p>Calculate your FD investment returns and your gain on maturity of your investments.</p>
+            <button id="show-button" onclick="window.location.href='FD_Calculator.html'">Calculate</button>
+        </div>
+    
+        <div class="info-card">
+            <h2>Simple and Compound Interest</h2>
+            <p>Calculate the amount of interest payable on your borrowed or loaned money.</p>
+            <button id="show-button" onclick="window.location.href='interest.html'">Calculate</button>
+        </div>
+
+        <div class="info-card">
+          <h2>Recurring Deposit</h2>
+          <p>Calculate your RD investment returns and your gain on maturity of your investments.</p>
+          <button id="show-button" onclick="window.location.href='recurring.html'">Calculate</button>
+      </div>
+
+      <div class="info-card">
+        <h2>Tax Calculator</h2>
+        <p>Calculate payable CGST,SGST and GST to the government.</p>
+        <button id="show-button" onclick="window.location.href='tax.html'">Calculate</button>
+    </div>
+
+    <div class="info-card">
+      <h2>SIP Calculator</h2>
+      <p>Calculate SIP and value of your investment after a certain number of years.</p>
+      <button id="show-button" onclick="window.location.href='sip.html'">Calculate</button>
+  </div>
+    </center>
+
+    </div>
+
+   </body>
+
+<style>
+
+    .heading {
+      padding-top: 1.50%;
+    }
+
+    .logo {
+      transition: 0.3s;
+    }
+    
+    .info-card {
+        margin-top: 10%;
+        box-shadow: #000;
+        transition: 0.3s;
+        padding-top: 5%;
+        position: relative;
+        display: inline-block;
+        height: 160px;
+        width: 400px; /* set a fixed width for each info card */
+        margin: 10px; /* add some margin to create spacing between the cards */
+        border: 1px solid #000000; /* add a border for visual separation */
+        border-radius: 30px;
+        box-sizing: content-box; /* include border in width calculation */
+        text-align: center; /* center the content horizontally */
+      }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav li {
+      display: inline-block;
+      position: relative;
+    }
+    
+    nav a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #000;
+    }
+    
+    nav .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 0;
+      margin: 0;
+    }
+    
+    nav .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    nav .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      background-color: #fff;
+      border: 1px solid #000000;
+    }
+    
+    nav .dropdown-menu li {
+      display: block;
+    }
+    
+    nav .dropdown-menu li a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    
+    nav .dropdown-menu li a:hover {
+      background-color: #764AF1;
+    }
+
+    nav {
+      position: relative;
+    }
+    
+    
+</style>
+
+</html>

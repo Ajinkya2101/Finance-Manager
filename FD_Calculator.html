@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fixed Deposit Calculator</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="fd.css" />
+		<link
+		  rel="stylesheet"
+		  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+		/>
+  </head>
+  <body>
+
+    <nav>
+        <div class="logo">
+        Finance Manager      
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+           <li><a href="homepage.html">Home</a></li>
+           <li class="dropdown"><a href="emi.html">EMI</a>
+              <ul class="dropdown-menu">
+                 <li><a href="emitest.html">Compare</a></li>
+                 <li><a href="emitest2.html">Bank Options</a></li>
+              </ul>
+           </li>
+           <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+           <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+           <li><a href="interest.html">Simple & Compount Interest</a></li>
+           <li><a href="recurring.html">RD</a></li>
+           <li><a href="tax.html">GST</a></li>
+           <li><a href="sip.html">SIP</a></li>
+        </ul>
+     </nav>      
+
+     <style>
+  th {
+    background-color: #764AF1;
+    color: #fff;
+  }
+
+  th,td {
+    border: collapse;
+  }
+nav ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+nav li {
+ display: inline-block;
+ position: relative;
+}
+
+nav a {
+ display: block;
+ padding: 10px;
+ text-decoration: none;
+ color: #000;
+}
+
+nav .dropdown-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ padding: 0;
+ margin: 0;
+}
+
+nav .dropdown:hover .dropdown-menu {
+ display: block;
+}
+
+nav .dropdown-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ padding: 0;
+ margin: 0;
+ background-color: #fff;
+ border: 1px solid #ccc;
+}
+
+nav .dropdown-menu li {
+ display: block;
+}
+
+nav .dropdown-menu li a {
+ display: block;
+ padding: 10px;
+ text-decoration: none;
+ color: #333;
+}
+
+nav .dropdown-menu li a:hover {
+ background-color: #764AF1;
+}
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+  border: 1px solid #000;
+}
+
+     </style>
+  
+	 <center>
+    <h2>Fixed Deposit Calculator</h2>
+	
+    <label for="principal">Principal Amount:</label>
+	 <div>
+    <input placeholder="Enter Principal Amount" type="number" id="principal" name="principal"><br><br>
+	</div>
+    <label for="rate">Annual Interest Rate:</label>
+	<div>
+    <input placeholder="Annual Interest Rate" type="number" id="rate" name="rate"><br><br>
+	</div>
+    <label for="term">Term (in years):</label>
+	<div>
+    <input placeholder="Tenure" type="number" id="term" name="term"><br><br>
+	</div>
+    <button onclick="calculate()" id="show-button">Calculate</button>
+    <br><br>
+    <label for="result">Maturity Amount:</label>
+	<div>
+    <input placeholder="Maturity Amount" type="text" id="result" name="result" readonly>
+	</div>
+    <script src="fdcalculator.js"></script>
+	</center>
+
+    <center>
+<table>
+    <tr>
+        <th>Bank FD Names</th>
+        <th>For General Citizens (p.a.)</th>
+        <th>For Senior Citizens (p.a)</th>
+    </tr>
+
+    <tr>
+        <td>State Bank of India FD</td>
+        <td>3.00% to 7.10%</td>
+        <td>3.50% to 7.60%</td>
+    </tr>
+
+    <tr>
+        <td>HDFC Bank FD</td>
+        <td>3.00% to 7.10%</td>
+        <td>3.50% to 7.75%</td>
+    </tr>
+
+    <tr>
+        <td>ICICI Bank FD</td>
+        <td>3.00% to 7.10%</td>
+        <td>3.50% to 7.60%</td>
+    </tr>
+
+    <tr>
+        <td>IDBI Bank FD</td>
+        <td>3.00% to 6.75%</td>
+        <td>3.50% to 7.50%</td>
+    </tr>
+
+    <tr>
+        <td>Kotak Mahindra Bank FD</td>
+        <td>2.75% to 7.20%</td>
+        <td>3.25% to 7.70%</td>
+    </tr>
+
+    <tr>
+        <td>Axis Bank FD</td>
+        <td>3.50% to 7.26%</td>
+        <td>3.50% to 8.01%</td>
+    </tr>
+</table>
+</center>
+
+  </body>
+</html> 

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="emitest.css" />
+
+    <nav>
+      <div class="logo">
+      Finance Manager      
+      </div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+         <li><a href="homepage.html">Home</a></li>
+         <li class="dropdown"><a href="emi.html">EMI</a>
+            <ul class="dropdown-menu">
+               <li><a href="emitest.html">Compare</a></li>
+               <li><a href="emitest2.html">Bank Options</a></li>
+            </ul>
+         </li>
+         <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+         <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+         <li><a href="interest.html">Simple & Compount Interest</a></li>
+         <li><a href="recurring.html">RD</a></li>
+         <li><a href="tax.html">GST</a></li>
+         <li><a href="sip.html">SIP</a></li>
+      </ul>
+   </nav>      
+
+   <style>
+  th {
+    background-color: #764AF1;
+    color: #fff;
+  }
+
+  th,td {
+    border: collapse;
+  }
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+nav li {
+display: inline-block;
+position: relative;
+}
+
+nav a {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: #000;
+}
+
+nav .dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+padding: 0;
+margin: 0;
+}
+
+nav .dropdown:hover .dropdown-menu {
+display: block;
+}
+
+nav .dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+padding: 0;
+margin: 0;
+background-color: #fff;
+border: 1px solid #ccc;
+}
+
+nav .dropdown-menu li {
+display: block;
+}
+
+nav .dropdown-menu li a {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: #333;
+}
+
+nav .dropdown-menu li a:hover {
+background-color: #764AF1;
+}
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+  border: 1px solid #000;
+}
+
+#show-button {
+  background-color: #764AF1;
+  color: #FEFBF6;
+  padding: 10px 10px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+   </style>
+
+    <title>EMI Calculator</title>
+    
+
+<body>
+  <center>
+    <h2>EMI Calculator</h2>
+    
+    <label for="loanAmount">Loan Amount:</label>
+    <div>
+    <input placeholder="Loan Amount" type="number" id="loanAmount"><br><br>
+    </div>
+    
+    <label for="interestRate">Choose Bank (Interest Rate):</label>
+    <div>
+    <select id="interestRate" style="width:200px;">
+        <option value="8">8%</option>
+        <option value="9">9%</option>
+        <option value="10">10%</option>
+        <option value="11">11%</option>
+        <option value="12">12%</option>
+    </select><br><br>
+    </div>
+    
+    <label for="loanTerm">Loan Term (in months):</label>
+    <div>
+    <input placeholder="Loan Term" type="number" id="loanTerm"><br><br>
+    </div>
+    
+    <button id="show-button" onclick="calculateEMI()">Calculate EMI</button>
+    
+    <h2 id="result"></h2>
+    
+    <script>
+      function calculateEMI() {
+  var loanAmount = document.getElementById("loanAmount").value;
+  var interestRate = document.getElementById("interestRate").value;
+  var loanTerm = document.getElementById("loanTerm").value;
+
+  var monthlyInterestRate = interestRate / 1200 ;
+  var numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, loanTerm) ;
+  var denominator = Math.pow(1 + monthlyInterestRate, loanTerm) - 1 ;
+  var emi = loanAmount * numerator / denominator ;
+
+  document.getElementById("result").innerHTML = "Your monthly EMI is Rs. " + Math.round(emi);
+}
+
+    </script>
+
+<table>
+   <tr>
+      <th> Lenders </th>
+      <th> Interest Rate (p.a.) </th>
+      <th> Processing Fee (% of loan amount) </th>
+   </tr>
+   <tr>
+     <td> State Bank of India </td>
+     <td> 11.00% – 15.00% </td>
+     <td> Up to 1.50% (Rs 1,000 – Rs 15,000) </td>
+   </tr>
+   <tr>
+     <td> HDFC Bank </td>
+     <td> 10.50%  onwards </td>
+     <td> Up to Rs 4,999 </td>
+   </tr>
+   <tr>
+      <td> ICICI Bank </td>
+      <td> 10.75% onwards </td>
+      <td> Up to 2.5% </td>
+    </tr>
+    <tr>
+      <td> Bank of Baroda </td>
+      <td> 10.90% – 18.25% </td>
+      <td> Up to 2% (Rs 1,000 – Rs 10,000) </td>
+    </tr>
+    <tr>
+      <td> Union Bank of India </td>
+      <td> 11.40% – 15.50% </td>
+      <td> Up to 1% (Maximum Rs 7,500) </td>
+    </tr>
+    <tr>
+      <td> Central Bank of India </td>
+      <td> 	10.95% – 12.55% </td>
+      <td> Up to 1% </td>
+    </tr>
+
+
+ </table>
+
+</body>
+</center>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="sip.css" />
+	<nav>
+		<div class="logo">
+		Finance Manager      
+		</div>
+		<input type="checkbox" id="click">
+		<label for="click" class="menu-btn">
+		<i class="fas fa-bars"></i>
+		</label>
+		<ul>
+		   <li><a href="homepage.html">Home</a></li>
+		   <li class="dropdown"><a href="emi.html">EMI</a>
+			  <ul class="dropdown-menu">
+				 <li><a href="emitest.html">Compare</a></li>
+				 <li><a href="emitest2.html">Bank Options</a></li>
+			  </ul>
+		   </li>
+		   <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+		   <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+		   <li><a href="interest.html">Simple & Compount Interest</a></li>
+           <li><a href="recurring.html">RD</a></li>
+		   <li><a href="tax.html">GST</a></li>
+           <li><a href="sip.html">SIP</a></li>
+		</ul>
+	 </nav>  
+
+    <meta charset="UTF-8">
+    <title>SIP Calculator</title>
+    <style>
+        th {
+            background-color: #764AF1;
+            color: #fff;
+        }
+
+        th,td {
+            border: collapse;
+        }
+
+        nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        }
+
+        nav li {
+        display: inline-block;
+        position: relative;
+        }
+
+        nav a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #000;
+        }
+
+        nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        }
+
+        nav .dropdown:hover .dropdown-menu {
+        display: block;
+        }
+
+        nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        }
+
+        nav .dropdown-menu li {
+        display: block;
+        }
+
+        nav .dropdown-menu li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        }
+
+        nav .dropdown-menu li a:hover {
+        background-color: #764AF1;
+        }
+
+        table {
+            border: 1px solid black ;
+            border-collapse: collapse;
+            width: 1000px;
+            height: 200px;
+        }
+
+        th,tr,td {
+            border: solid 1px;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #764AF1;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2>SIP Calculator</h2>
+    <form>
+        <label for="investment">Monthly Investment:</label>
+        <div>
+        <input type="number" id="investment" name="investment" required><br><br>
+    </div>
+
+        <label for="rate">Expected Rate of Return (%):</label>
+    <div>
+        <input type="number" id="rate" name="rate" required><br><br>
+    </div>
+
+        <label for="period">Investment Period (in years):</label>
+    <div>
+        <input type="number" id="period" name="period" required><br><br>
+    </div>
+
+        <input type="button" id="show-button" value="Calculate" onclick="calculate()">
+    </form>
+
+    <br>
+    <div id="output"></div>
+
+    <script>
+        function calculate() {
+            var investment = parseInt(document.getElementById("investment").value);
+            var rate = parseFloat(document.getElementById("rate").value);
+            var period = parseInt(document.getElementById("period").value);
+            var totalInvestment = investment * 12 * period;
+            var totalInterest = 0;
+            var totalWealth = 0;
+            var tableData = "<table><tr><th>Year</th><th>Total Investment</th><th>Total Interest</th><th>Total Wealth</th></tr>";
+
+            for (var i = 1; i <= period; i++) {
+                var monthlyInterest = (investment + totalWealth) * (rate / 100) / 12;
+                totalInterest += monthlyInterest * 12;
+                totalWealth += investment * 12 + monthlyInterest * 12;
+                var yearData = "<tr><td>Year " + i + "</td><td>Rs. " + (investment * 12 * i).toLocaleString() + "</td><td>Rs. " + (totalInterest).toLocaleString() + "</td><td>Rs. " + (totalWealth).toLocaleString() + "</td></tr>";
+                tableData += yearData;
+            }
+            tableData += "</table>";
+            document.getElementById("output").innerHTML = tableData;
+        }
+    </script>
+    </center>
+</body>
+</html>

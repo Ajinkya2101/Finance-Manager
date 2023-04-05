@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interest Calculator</title>
+  <link rel="stylesheet" href="fd.css" />
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+        Finance Manager      
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+           <li><a href="homepage.html">Home</a></li>
+           <li class="dropdown"><a href="emi.html">EMI</a>
+              <ul class="dropdown-menu">
+                 <li><a href="emitest.html">Compare</a></li>
+                 <li><a href="emitest2.html">Bank Options</a></li>
+              </ul>
+           </li>
+           <li><a href="profit_loss.html.html">Profit&Loss</a></li>
+           <li><a href="FD_Calculator.html">Fixed Deposit</a></li>
+           <li><a href="interest.html">Simple & Compount Interest</a></li>
+           <li><a href="recurring.html">RD</a></li>
+           <li><a href="tax.html">GST</a></li>
+           <li><a href="sip.html">SIP</a></li>
+        </ul>
+     </nav> 
+
+     <style>
+        nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        
+        nav li {
+          display: inline-block;
+          position: relative;
+        }
+        
+        nav a {
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          color: #000;
+        }
+        
+        nav .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          padding: 0;
+          margin: 0;
+        }
+        
+        nav .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+        
+        nav .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          padding: 0;
+          margin: 0;
+          background-color: #fff;
+          border: 3px solid #000000;
+        }
+        
+        nav .dropdown-menu li {
+          display: block;
+        }
+        
+        nav .dropdown-menu li a {
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          color: #333;
+        }
+        
+        nav .dropdown-menu li a:hover {
+          background-color: #764AF1;
+        }
+
+        h3 {
+          padding-top: 30px;
+          padding-bottom: 100px;
+        }
+
+        table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #764AF1;
+    color: #fff;
+  }
+
+      </style>
+<center>
+  <div class="container">
+		<h1>Interest Calculator</h1>
+		<form id="interest-form">
+			<label for="principal">Principal Amount:</label>
+      <div>
+			<input type="number" id="principal" required>
+    <div>
+
+			<label for="rate">Interest Rate:</label>
+    <div>
+			<input type="number" id="rate" required>
+    </div>
+
+			<label for="time">Time (in years):</label>
+    <div>
+			<input type="number" id="time" required>
+    </div>
+
+			<label for="type">Interest Type:</label><br>
+      <label>Compounding frequency(Annually)</label>
+    </div>
+			<select id="type">
+				<option value="simple">Simple Interest</option>
+				<option value="compound">Compound Interest</option>
+			</select>
+    </div>
+
+			<button id="show-button" type="submit">Calculate</button>
+		</form>
+
+		<table id="output-table">
+			<thead>
+				<tr>
+					<th>Year</th>
+					<th>Starting Amount</th>
+					<th>Interest Earned</th>
+					<th>Ending Amount</th>
+				</tr>
+			</thead>
+			<tbody id="output-body">
+			</tbody>
+		</table>
+	</div>
+
+
+	<script src="interest.js"></script>
+</center>
+</body>
+</html>
